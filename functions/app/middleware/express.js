@@ -7,6 +7,7 @@ const morgan = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const errorHandler = require('errorhandler');
 
 const helmet = require('helmet');
@@ -21,6 +22,7 @@ app.use(session({
 }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(helmet());
 
