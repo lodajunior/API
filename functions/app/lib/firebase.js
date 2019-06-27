@@ -1,11 +1,12 @@
 
-const serviceAccount = require("./config/my-project-dbc6d-firebase-adminsdk-kyb8h-d9dfa78727.json");
+const serviceAccount = require("../config/my-project-dbc6d-firebase-adminsdk-kyb8h-d9dfa78727.json");
 
-const admin = require("firebase-admin"),
-    firebase = admin.initializeApp({
-        credential: admin.credential.cert(serviceAccount),
-        databaseURL: "https://my-project-dbc6d.firebaseio.com"
-    });
+const admin = require("firebase-admin");
+const firebase = admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: "https://my-project-dbc6d.firebaseio.com"
+});
+
 const functions = require('firebase-functions');
 
 const auth = admin.auth();
